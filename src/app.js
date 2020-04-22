@@ -10,19 +10,16 @@ app.use(cors());
 const repositories = [];
 
 app.get("/repositories", (request, response) => {
-  // TODO
   return response.json(repositories)
 });
 
 app.post("/repositories", (request, response) => {
-  // TODO
   const { title, url, techs } = request.body;
   repositories.push({ id: uuid(), title, url, techs, likes: 0 })
   return response.json(repositories)
 });
 
 app.put("/repositories/:id", (request, response) => {
-  // TODO
   const { id } = request.params;
   const { title, url, techs } = request.body;
   const repositoryIndex = repositories.findIndex(repository => repository.id === id)
